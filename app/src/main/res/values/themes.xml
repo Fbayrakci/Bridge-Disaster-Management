@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Bridge_authorized" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/yesil</item>
+    </style>
+
+    <style name="Theme.Bridge_authorized" parent="Base.Theme.Bridge_authorized" />
+
+</resources>

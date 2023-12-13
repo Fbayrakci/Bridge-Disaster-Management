@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yesil">#56ac7a</color>
+    <color name="acık_mavi">#e0f4fe</color>
+    <color name="acık_kahverengi">#d5b282</color>
+    <color name="kart_mavi">#91bfd2</color>
+    <color name="turkuaz">#42c8e8</color>
+    <color name="kırmızı_pembe">#e26465</color>
+    <color name="actionbar_opacity">#33000000</color>
+</resources>
