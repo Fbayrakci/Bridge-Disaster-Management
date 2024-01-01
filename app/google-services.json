@@ -1,0 +1,32 @@
+{
+  "project_info": {
+    "project_number": "693422206388",
+    "project_id": "bridge2final",
+    "storage_bucket": "bridge2final.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693422206388:android:e606f90c5127b1151d96e1",
+        "android_client_info": {
+          "package_name": "com.example.bridge_authorized"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkhhuKysUx5tmDNRtlNopUOKSV5OF7Hfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
+
+
+
