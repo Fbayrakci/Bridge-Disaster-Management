@@ -148,12 +148,12 @@
                 android:layout_height="327dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="382dp"
                     android:layout_height="149dp"
+                    android:layout_gravity="center"
                     android:orientation="horizontal">
 
                     <RelativeLayout
@@ -164,13 +164,19 @@
                         android:background="@drawable/background_button">
 
                         <ImageView
-                            android:id="@+id/imageView1"
+                            android:id="@+id/imageViewAddAnnoucments"
                             android:layout_width="match_parent"
                             android:layout_height="250dp"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/add_announcemnt"
 
                             />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:textStyle="bold"
+                            android:text="Add Annoucments" />
 
                     </RelativeLayout>
 
@@ -182,7 +188,7 @@
                         android:background="@drawable/background_button">
 
                         <ImageView
-                            android:id="@+id/imageView2"
+                            android:id="@+id/requestHelpImg"
                             android:layout_width="match_parent"
                             android:layout_height="250dp"
                             />
@@ -191,13 +197,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
-                            android:text="Request Help" />
+                            android:text="Request Help"
+                            android:textStyle="bold" />
                     </RelativeLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="380dp"
                     android:layout_height="158dp"
+                    android:layout_gravity="center"
                     android:orientation="horizontal">
 
                     <RelativeLayout
@@ -208,7 +216,7 @@
                         android:background="@drawable/background_button">
 
                         <ImageView
-                            android:id="@+id/imageView3"
+                            android:id="@+id/seeRequest"
                             android:layout_width="match_parent"
                             android:layout_height="250dp"
                             />
@@ -216,6 +224,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textStyle="bold"
                             android:layout_centerInParent="true"
                             android:text="See Request" />
                     </RelativeLayout>
@@ -228,7 +237,7 @@
                         android:background="@drawable/background_button">
 
                         <ImageView
-                            android:id="@+id/imageView4"
+                            android:id="@+id/seeDonations"
                             android:layout_width="match_parent"
                             android:layout_height="250dp"
                              />
@@ -237,7 +246,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
-                            android:text="See Donations" />
+                            android:text="See Donations"
+                            android:textStyle="bold" />
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>

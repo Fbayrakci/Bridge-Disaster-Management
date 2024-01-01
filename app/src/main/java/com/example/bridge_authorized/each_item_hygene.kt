@@ -2,15 +2,10 @@ package com.example.bridge_authorized
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.firebase.FirebaseApp
 
-class add_announcement : AppCompatActivity() {
-    private lateinit var firebaseApp: FirebaseApp
+class each_item_hygene : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_announcement)
-
+        setContentView(R.layout.activity_each_item_hygene)
     }
-
-
 }
