@@ -20,16 +20,25 @@ class admin_dashboard : AppCompatActivity() {
         setContentView(view)
 
         val imgAddPerson = view.findViewById<ImageView>(R.id.imgAddPerson)
-        val logoutButton: ImageView = findViewById(R.id.imageView4)
-
-        logoutButton.setOnClickListener {
-            logoutUser()
+        val imageView4 = view.findViewById<ImageView>(R.id.imageView4)
+        val logoutImageView = findViewById<ImageView>(R.id.logoutAut)
+        logoutImageView.setOnClickListener {
+            SessionManager.getInstance(applicationContext).logout()
+            val intent = Intent(this, SplashScreen::class.java)
+            startActivity(intent)
+            finish()
         }
 
         // Butona tıklama dinleyicisi ekleme
         imgAddPerson.setOnClickListener {
             // Başka bir Activity'yi başlatma
             val intent = Intent(this, SignInAuthorized::class.java)
+            startActivity(intent)
+        }
+
+        imageView4.setOnClickListener {
+            // Başka bir Activity'yi başlatma
+            val intent = Intent(this, adminremovedauthorizedperson::class.java)
             startActivity(intent)
         }
     }

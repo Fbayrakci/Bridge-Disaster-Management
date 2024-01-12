@@ -137,8 +137,8 @@ class SignInDonor : AppCompatActivity() {
 
             db.collection("donor").document(donorId).set(donorMap)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Successfully Added!", Toast.LENGTH_LONG).show()
-                    val intent = Intent(this@SignInDonor, donor_dashboard::class.java)
+                    Toast.makeText(this, "Your registration is successful, please log in.", Toast.LENGTH_LONG).show()
+                    val intent = Intent(this@SignInDonor, SignUpDonor::class.java)
                     startActivity(intent)
                     finish()
                 }

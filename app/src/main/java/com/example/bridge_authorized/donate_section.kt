@@ -3,10 +3,12 @@ package com.example.bridge_authorized
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bridge_authorized.databinding.ActivityDonateSectionBinding
 import com.example.bridge_authorized.databinding.ActivitySignInAuthorizedBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class donate_section : AppCompatActivity() {
     private lateinit var binding: ActivityDonateSectionBinding
@@ -15,6 +17,7 @@ class donate_section : AppCompatActivity() {
     private var mList: ArrayList<DonationTypeData> = ArrayList()
 
     private lateinit var adapter: DonationAdapter
+    private lateinit var navView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +42,32 @@ class donate_section : AppCompatActivity() {
         }
 
         recyclerView.adapter = adapter
-    }
 
+        val annoucment = findViewById<ImageView>(R.id.annoucment)
+        annoucment.setOnClickListener{
+            val intent = Intent(this, donor_annoucment_section::class.java)
+            startActivity(intent)
+        }
+
+        navView = findViewById(R.id.nav_view)
+
+        // Bu satırı ekleyin
+        navView.selectedItemId = R.id.nav2
+
+        navView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.nav1 -> navigateToActivity(donor_dashboard::class.java)
+                R.id.nav2 -> navigateToActivity(donate_section::class.java)
+                R.id.nav3 -> navigateToActivity(donor_dashboard::class.java)
+                R.id.nav4 -> navigateToActivity(donor_profile::class.java)
+            }
+            true
+        }
+    }
+    private fun navigateToActivity(targetActivity: Class<*>) {
+        val intent = Intent(this, targetActivity)
+        startActivity(intent)
+    }
     private fun addDataToCategory() {
         mList.add(DonationTypeData("Food", R.drawable.annoucments1, each_item_food::class.java))
         mList.add(DonationTypeData("Clothes", R.drawable.annoucments1, each_item_clothes::class.java))

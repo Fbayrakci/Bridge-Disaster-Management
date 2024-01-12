@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
-
- <!--  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />  -->
-
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-
 
     <application
         android:allowBackup="true"
@@ -16,12 +13,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Bridge_authorized"
-        tools:targetApi="31" >
-
+        tools:targetApi="31">
+        <activity
+            android:name=".adminremovedauthorizedperson"
+            android:exported="false" />
+        <activity
+            android:name=".donor_iban"
+            android:exported="false" />
+        <activity
+            android:name=".donor_annoncment_recentnews"
+            android:exported="false" />
+        <activity
+            android:name=".donor_annoucment_section"
+            android:exported="false" />
         <activity
             android:name=".seerequest_item"
             android:exported="false" />
-
         <activity
             android:name=".depo_activity"
             android:exported="false" />
@@ -79,8 +86,6 @@
         <activity
             android:name=".aut_add_annoucments"
             android:exported="false" />
-
-
         <activity
             android:name=".reguest_help_form"
             android:exported="false" />
@@ -91,7 +96,7 @@
             android:theme="@style/Theme.Bridge_authorized" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

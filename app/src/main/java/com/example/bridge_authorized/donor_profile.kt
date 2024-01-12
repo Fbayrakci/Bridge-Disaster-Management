@@ -5,15 +5,39 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 class donor_profile : AppCompatActivity() {
+    private lateinit var navView: BottomNavigationView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_donor_profile)
+
+        val annoucment = findViewById<ImageView>(R.id.annoucment)
+        annoucment.setOnClickListener{
+            val intent = Intent(this, donor_annoucment_section::class.java)
+            startActivity(intent)
+        }
+
+        navView = findViewById(R.id.nav_view)
+
+        navView.selectedItemId = R.id.nav4
+
+        navView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.nav1 -> navigateToActivity(donor_dashboard::class.java)
+                R.id.nav2 -> navigateToActivity(donate_section::class.java)
+                R.id.nav3 -> navigateToActivity(donor_dashboard::class.java)
+                R.id.nav4 -> navigateToActivity(donor_profile::class.java)
+            }
+            true
+        }
+
         val logoutImageView = findViewById<ImageView>(R.id.logoutDonor)
         logoutImageView.setOnClickListener {
             SessionManager.getInstance(applicationContext).logout()
-            val intent = Intent(this, SignUpDonor::class.java)
+            val intent = Intent(this, SplashScreen::class.java)
             startActivity(intent)
             finish()
         }
@@ -45,5 +69,9 @@ class donor_profile : AppCompatActivity() {
         } else {
             Toast.makeText(this, "No signed-in user", Toast.LENGTH_SHORT).show()
         }
+    }
+    private fun navigateToActivity(targetActivity: Class<*>) {
+        val intent = Intent(this, targetActivity)
+        startActivity(intent)
     }
 }

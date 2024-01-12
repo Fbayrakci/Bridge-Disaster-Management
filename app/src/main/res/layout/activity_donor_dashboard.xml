@@ -27,13 +27,26 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/my_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="61dp"
                 android:background="@color/yesil"
                 android:elevation="0dp"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
 
                 app:popupTheme="@style/Widget.AppCompat.ActionBar.Solid">
 
+                <ImageView
+                    android:id="@+id/notification_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingEnd="16dp"
+                    android:src="@drawable/ic_video"
+                    app:layout_constraintEnd_toStartOf="@+id/donateSection"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
                 <!-- Boşluk -->
                 <Space
                     android:layout_width="0dp"
@@ -41,15 +54,18 @@
                     android:layout_weight="1" />
 
                 <!-- "Bridge" Metni -->
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Annoucments"
-                    android:textStyle="bold"
-                    android:layout_marginTop="20dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="-50dp"
+                    android:layout_marginTop="20dp"
+                    android:text="BRIDGE"
                     android:textColor="@android:color/white"
-                    android:textSize="30dp" />
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
 
 
             </androidx.appcompat.widget.Toolbar>
@@ -140,10 +156,10 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/goNotice"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/noticedashboard"
+                    android:src="@drawable/donorann"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -204,9 +220,10 @@
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/annoucment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/bottom_btn5"
+            android:src="@drawable/bottom_btn1"
             app:backgroundTint="@color/yesil"
             app:layout_anchor="@id/nav_bar"
             app:maxImageSize="30dp"

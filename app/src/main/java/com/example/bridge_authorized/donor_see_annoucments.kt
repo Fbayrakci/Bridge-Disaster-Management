@@ -1,7 +1,9 @@
 package com.example.bridge_authorized
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,6 +27,11 @@ class donor_see_annoucments : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        val backdash = findViewById<ImageView>(R.id.backdash)
+        backdash.setOnClickListener{
+            val intent = Intent(this, donor_dashboard::class.java)
+            startActivity(intent)
+        }
         // Here you add your data to the list
         fetchDataFromFirestore()
         // Initialize the adapter

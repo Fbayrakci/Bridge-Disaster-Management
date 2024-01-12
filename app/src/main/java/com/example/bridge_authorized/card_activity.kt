@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bridge_authorized.databinding.ActivityCardBinding
@@ -25,6 +26,8 @@ class card_activity : AppCompatActivity() {
         setContentView(binding.root)
 
         val btnApprove = findViewById<Button>(R.id.btnApprove)
+        val back = findViewById<ImageView>(R.id.back)
+
         btnApprove.setOnClickListener {
             val intent = Intent(this, donor_form::class.java)
 
@@ -33,6 +36,14 @@ class card_activity : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+        back.setOnClickListener {
+            val intent = Intent(this, donate_section::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
 
 
         recyclerView = findViewById(R.id.recyclerViewDonateCardType)

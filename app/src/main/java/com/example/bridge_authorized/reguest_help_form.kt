@@ -73,7 +73,7 @@ class reguest_help_form : AppCompatActivity() {
             }
     }
 
-    private fun getUserDetails(): HashMap<String, String> {
+    private fun getUserDetails(): HashMap<String, Any> { // Changed from String to Any to accommodate Boolean values
         return hashMapOf(
             "autname" to binding.authformname.text.toString(),
             "autsurname" to binding.autformsurname.text.toString(),
@@ -83,9 +83,11 @@ class reguest_help_form : AppCompatActivity() {
             "autcocenter" to binding.autaidcenter.text.toString(),
             "autcategory" to binding.autoCompleteCategory.text.toString(),
             "autitem" to binding.autoCompleteUrun.text.toString(),
-            "autquantity" to binding.autoCompleteMiktar.text.toString()
+            "autquantity" to binding.autoCompleteMiktar.text.toString(),
+            "isSended" to false // Added new field
         )
     }
+
 
 
     private fun fetchUserDetails() {

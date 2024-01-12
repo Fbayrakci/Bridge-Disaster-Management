@@ -1,6 +1,6 @@
 package com.example.bridge_authorized
-
 data class SeeRequestItem(
+    var id: String = "",
     val autname: String = "",
     val autsurname: String = "",
     val autphone: String = "",
@@ -9,5 +9,6 @@ data class SeeRequestItem(
     val autitem: String = "",
     val autquantity: String = "",
     val autregion: String = "",
-    val autcocenter: String = ""
+    val autcocenter: String = "",  // Yeni eklenen özellik
+    val isSended: Boolean = false
 )

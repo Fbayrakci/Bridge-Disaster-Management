@@ -38,7 +38,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_marginTop="-30dp"
+                android:layout_marginTop="35dp"
                 android:layout_height="match_parent"
                 >
 
@@ -77,32 +77,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:layout_marginStart="48dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="0dp"
                     android:background="@drawable/card_background"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <TextView
-                        android:id="@+id/textView7"
+                    <ImageView
+                        android:id="@+id/logo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="12dp"
-                        android:text="Last Activity "
-                        android:textColor="@color/black"
-                        android:textSize="23sp"
+                        android:layout_marginStart="64dp"
+                        android:layout_marginBottom="88dp"
+                        android:src="@drawable/logo23"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2023-10-21"
-                        android:textColor="#ffffff"
-                        android:textSize="18sp"
-                        app:layout_constraintStart_toStartOf="@+id/textView7"
-                        app:layout_constraintTop_toBottomOf="@+id/textView7" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ImageView
@@ -277,13 +266,14 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/nav_bar_ann"
+            android:id="@+id/nav_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:backgroundTint="@color/white"
             app:fabCradleRoundedCornerRadius="10dp"
-            app:fabCradleVerticalOffset="10dp" />
+            app:fabCradleVerticalOffset="10dp"
+            />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_view"
@@ -291,15 +281,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:background="@drawable/transparent"
-            app:menu="@menu/bottom_nav_menu_auth_add_annoucments" />
+            app:menu="@menu/bottom_nav_menu_auth_dashboard"
+            />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/annoucment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/bottom_btn1"
             app:backgroundTint="@color/yesil"
-            app:layout_anchor="@id/nav_bar_ann"
-            app:maxImageSize="40dp"
+            app:layout_anchor="@id/nav_bar"
+            app:maxImageSize="30dp"
             app:tint="@color/white" />
 
 

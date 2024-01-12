@@ -8,15 +8,18 @@ import android.os.Bundle
 import android.text.Layout
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.bridge_authorized.databinding.ActivityAuthorizedDashboardBinding
 import com.example.bridge_authorized.databinding.ActivityCardBinding
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class authorized_dashboard : AppCompatActivity() {
     private lateinit var binding: ActivityAuthorizedDashboardBinding
-
+    private lateinit var navView: BottomNavigationView
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,16 +66,33 @@ class authorized_dashboard : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val annoucment = findViewById<ImageView>(R.id.annoucment)
+        annoucment.setOnClickListener{
+            val intent = Intent(this, aut_add_annoucments::class.java)
+            startActivity(intent)
+        }
 
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
-        bottomNavigationView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
+
+
+
+        navView = findViewById(R.id.nav_view)
+
+        // Bu satırı ekleyin
+        navView.selectedItemId = R.id.nav1
+
+        navView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.nav1 -> navigateToActivity(authorized_dashboard::class.java)
+                R.id.nav2 -> navigateToActivity(seedonations_item::class.java)
+                R.id.nav3 -> navigateToActivity(seerequest_item::class.java)
                 R.id.nav4 -> navigateToActivity(aut_profile::class.java)
-
             }
             true
         }
+
     }
+
+
 
     private fun navigateToActivity(targetActivity: Class<*>) {
         val intent = Intent(this, targetActivity)
@@ -80,3 +100,4 @@ class authorized_dashboard : AppCompatActivity() {
     }
 
 }
+

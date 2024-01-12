@@ -167,8 +167,6 @@
                 android:layout_width="160dp"
                 android:background="@drawable/background_button"
                 android:layout_height="wrap_content"
-                android:onClick="signinClick"
-
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="25dp"
                 android:text="Approved"

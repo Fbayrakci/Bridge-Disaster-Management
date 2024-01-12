@@ -44,7 +44,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bridge"
+                    android:text="BRIDGE"
                     android:textColor="@android:color/white"
                     android:textSize="30dp" />
 
@@ -55,7 +55,7 @@
                     android:layout_height="50dp"
                     android:layout_gravity="end"
                     android:paddingEnd="16dp"
-                    android:src="@drawable/bildim" />
+                    android:src="@drawable/ic_video" />
             </androidx.appcompat.widget.Toolbar>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -111,7 +111,7 @@
                     android:layout_height="46dp"
                     android:layout_marginStart="28dp"
                     android:text="Aid Coordination \nCenter"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
@@ -283,9 +283,10 @@
              />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/annoucment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/bottom_btn5"
+            android:src="@drawable/bottom_btn1"
             app:backgroundTint="@color/yesil"
             app:layout_anchor="@id/nav_bar"
             app:maxImageSize="30dp"

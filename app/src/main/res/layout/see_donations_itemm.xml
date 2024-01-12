@@ -115,25 +115,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="80dp"
                 android:gravity="center"
-                android:text="Food"
+                android:text="Category"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.135"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/delete_icon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="start"
-                android:layout_marginLeft="320dp"
-                android:src="@drawable/ic_delete"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/yesil" />
+                app:layout_constraintVertical_bias="0.476" />
+
 
             <TextView
                 android:id="@+id/txtSectionUrunitem"
@@ -141,14 +133,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="90dp"
                 android:gravity="center"
-                android:text="Su"
+                android:text="Items"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toEndOf="@+id/txtSectionCategoryitem"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.492" />
 
             <TextView
                 android:id="@+id/txtAdetBos"
@@ -156,48 +150,29 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:gravity="center"
-                android:text="Quantity:"
+                android:text="Quantitys"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.914"
                 app:layout_constraintStart_toEndOf="@+id/txtSectionUrunitem"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txtSectionAdetitem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:gravity="center"
-                android:text="100"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txtAdetBos"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imgSectioncard"
-                android:layout_width="100dp"
-                android:layout_height="80dp"
-                android:adjustViewBounds="true"
-                android:onClick="imgsection"
-                android:scaleType="centerCrop"
-                android:src="@drawable/annoucments1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="DuplicateIds" />
+                app:layout_constraintVertical_bias="0.476" />
 
 
             <!-- Teslim Aldım Butonu -->
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/donationItemsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    </LinearLayout>
 
         <Button
             android:id="@+id/btnTeslimAldim"

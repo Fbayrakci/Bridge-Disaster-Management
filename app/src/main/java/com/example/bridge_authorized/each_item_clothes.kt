@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -14,6 +15,14 @@ class each_item_clothes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_each_item_clothes)
+
+        val back = findViewById<ImageView>(R.id.back)
+
+        back.setOnClickListener {
+            val intent = Intent(this, donate_section::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     @SuppressLint("WrongViewCast")

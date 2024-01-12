@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.bridge_authorized.databinding.ActivityAutAddAnnoucmentsBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
@@ -39,6 +41,7 @@ class aut_add_annoucments : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
         // Initialize Firebase and other components
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
@@ -49,6 +52,11 @@ class aut_add_annoucments : AppCompatActivity() {
 
         // Set up listeners and handlers for UI elements
         binding.addAnnouncementButton.setOnClickListener { uploadAnnouncement() }
+
+
+
+
+
     }
 
     private fun uploadAnnouncement() {

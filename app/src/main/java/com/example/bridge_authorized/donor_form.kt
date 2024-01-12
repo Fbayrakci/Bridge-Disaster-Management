@@ -1,5 +1,8 @@
 package com.example.bridge_authorized
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,12 +18,13 @@ import com.google.firebase.ktx.Firebase
 class donor_form : AppCompatActivity() {
     private lateinit var binding: ActivityDonorFormBinding
     private var db = Firebase.firestore
+    private lateinit var sharedPreferences: SharedPreferences  // Declare at the class level
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDonorFormBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         val donationData = intent.getSerializableExtra("donationData") as? ArrayList<DonationTypeCard>
         processDonationData(donationData)
@@ -29,6 +33,7 @@ class donor_form : AppCompatActivity() {
         submitButton.setOnClickListener {
             if (donationData != null) {
                 submitDonation(donationData)
+
             } else {
                 Toast.makeText(this, "No donation data to submit", Toast.LENGTH_SHORT).show()
             }
@@ -56,17 +61,25 @@ class donor_form : AppCompatActivity() {
                     "item" to donation.txtUrun,
                     "quantity" to donation.txtAdet
                 )
-            }
+            },
+            "isreceived" to false, // Adding the new Boolean field
+            "isOrdinary" to true // Adding the new Boolean field
         )
 
         db.collection("donations").add(newDonation)
             .addOnSuccessListener {
                 Toast.makeText(this, "Donation added successfully", Toast.LENGTH_SHORT).show()
+                donationData.clear()
+                clearSharedPreferences()
+                val intent = Intent(this@donor_form, donor_dashboard::class.java)
+                startActivity(intent)
+                finish()
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Error adding donation: ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
 
     private fun getUserDetails(): HashMap<String, String> {
         return hashMapOf(
@@ -77,6 +90,11 @@ class donor_form : AppCompatActivity() {
             "region" to binding.autoCompleteRegion.text.toString(),
             "center" to binding.autoCompleteCoordinationCenter.text.toString()
         )
+    }
+    private fun clearSharedPreferences() {
+        // Get the SharedPreferences Editor
+        val sharedPreferences = this.getSharedPreferences("com.example.bridge_authorized", Context.MODE_PRIVATE)
+        sharedPreferences.edit().clear().apply()
     }
 
     private fun fetchUserDetails() {

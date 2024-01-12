@@ -15,6 +15,7 @@ class SessionManager private constructor(private val context: Context) {
     }
     private val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
+
     var loggedInUserId: String?
         get() = prefs.getString("UserId", null)
         set(value) {

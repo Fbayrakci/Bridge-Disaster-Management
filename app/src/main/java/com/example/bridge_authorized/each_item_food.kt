@@ -17,7 +17,13 @@ class each_item_food : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_each_item_food)
 
+        val back = findViewById<ImageView>(R.id.back)
 
+        back.setOnClickListener {
+            val intent = Intent(this, donate_section::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     @SuppressLint("WrongViewCast")
