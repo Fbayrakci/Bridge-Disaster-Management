@@ -28,7 +28,7 @@ class donor_profile : AppCompatActivity() {
             when (it.itemId) {
                 R.id.nav1 -> navigateToActivity(donor_dashboard::class.java)
                 R.id.nav2 -> navigateToActivity(donate_section::class.java)
-                R.id.nav3 -> navigateToActivity(donor_dashboard::class.java)
+                R.id.nav3 -> navigateToActivity(donor_iban::class.java)
                 R.id.nav4 -> navigateToActivity(donor_profile::class.java)
             }
             true

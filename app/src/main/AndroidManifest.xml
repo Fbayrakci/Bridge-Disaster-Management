@@ -15,6 +15,15 @@
         android:theme="@style/Theme.Bridge_authorized"
         tools:targetApi="31">
         <activity
+            android:name=".donor_annoucment_healthcenter"
+            android:exported="false" />
+        <activity
+            android:name=".donor_annoucment_supplypoint"
+            android:exported="false" />
+        <activity
+            android:name=".donor_annoucment_shelter"
+            android:exported="false" />
+        <activity
             android:name=".adminremovedauthorizedperson"
             android:exported="false" />
         <activity
@@ -34,9 +43,6 @@
             android:exported="false" />
         <activity
             android:name=".SignUpDonor"
-            android:exported="false" />
-        <activity
-            android:name=".donor_see_annoucments"
             android:exported="false" />
         <activity
             android:name=".donor_profile"

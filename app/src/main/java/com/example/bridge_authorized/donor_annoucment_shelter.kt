@@ -8,19 +8,20 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bridge_authorized.databinding.ActivityDonorAnnoncmentRecentnewsBinding
+import com.example.bridge_authorized.databinding.ActivityDonorAnnoucmentShelterBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
-class donor_annoncment_recentnews : AppCompatActivity() {
-    private lateinit var binding: ActivityDonorAnnoncmentRecentnewsBinding
+class donor_annoucment_shelter : AppCompatActivity() {
+    private lateinit var binding: ActivityDonorAnnoucmentShelterBinding
     private lateinit var recyclerView: RecyclerView
     private var mList: ArrayList<AnnoucmentsTypeData> = ArrayList()
 
     private lateinit var adapter: AnnoucmentsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_donor_annoncment_recentnews)
+        setContentView(R.layout.activity_donor_annoucment_shelter)
 
-        binding = ActivityDonorAnnoncmentRecentnewsBinding.inflate(layoutInflater)
+        binding = ActivityDonorAnnoucmentShelterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         recyclerView = binding.recyclerRecentNews
@@ -51,7 +52,7 @@ class donor_annoncment_recentnews : AppCompatActivity() {
         val db = FirebaseFirestore.getInstance()
         // Query to fetch only announcements with the category "Recent News"
         db.collection("annoucments")
-            .whereEqualTo("category", "Recent News")
+            .whereEqualTo("category", "Shelter")
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
@@ -69,5 +70,4 @@ class donor_annoncment_recentnews : AppCompatActivity() {
                 Toast.makeText(this, "Error getting documents: ${it.message}", Toast.LENGTH_SHORT).show()
             }
     }
-
 }

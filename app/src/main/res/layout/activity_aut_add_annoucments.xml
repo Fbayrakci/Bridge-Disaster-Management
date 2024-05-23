@@ -22,7 +22,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="509dp">
 
             <!-- Fotoğraf Seçme Alanı -->
             <ImageView
@@ -31,38 +31,78 @@
                 android:layout_height="200dp"
                 android:layout_marginLeft="20dp"
                 android:onClick="selectImgClicked"
-                android:src="@drawable/aut_add_announc"
                 android:scaleType="fitCenter"
-                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/aut_add_announc"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/announcementdescriptionText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/sign_edit_text_back"
+                android:hint="Announcements Description"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/announcementcategoryText" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/announcementcategoryText"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="30dp"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/yesil"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/announcementText"
+                tools:ignore="MissingConstraints">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Choose Category"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Açıklama Alanı -->
             <EditText
                 android:id="@+id/announcementText"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
-                android:textSize="16sp"
-                android:hint="Announcements name"
-                android:textColor="@color/black"
                 android:layout_margin="16dp"
                 android:background="@drawable/sign_edit_text_back"
-                app:layout_constraintTop_toBottomOf="@id/selectedImage"
+                android:hint="Announcements Header"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/selectedImage" />
 
             <!-- Ekleme Butonu -->
             <Button
                 android:id="@+id/addAnnouncementButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Upload Announcement"
+                android:layout_marginTop="188dp"
                 android:backgroundTint="@color/yesil"
+                android:text="Upload Announcement"
                 android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@id/announcementText"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="16dp" />
+                app:layout_constraintTop_toBottomOf="@id/announcementText" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 

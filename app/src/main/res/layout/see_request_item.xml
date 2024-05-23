@@ -181,19 +181,10 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.049"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/delete_icon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="start"
-                android:layout_marginLeft="320dp"
-                android:src="@drawable/ic_delete"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/yesil" />
+                app:layout_constraintVertical_bias="0.476" />
 
             <TextView
                 android:id="@+id/seereqitem"
@@ -207,8 +198,10 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.43"
                 app:layout_constraintStart_toEndOf="@+id/seereqcategory"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.46" />
 
             <TextView
                 android:id="@+id/txtAdetBos"
@@ -222,8 +215,10 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.636"
                 app:layout_constraintStart_toEndOf="@+id/seereqitem"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.492" />
 
             <TextView
                 android:id="@+id/seereqquantity"
@@ -237,20 +232,10 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.276"
                 app:layout_constraintStart_toEndOf="@+id/txtAdetBos"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imgSectioncard"
-                android:layout_width="100dp"
-                android:layout_height="80dp"
-                android:adjustViewBounds="true"
-                android:onClick="imgsection"
-                android:scaleType="centerCrop"
-                android:src="@drawable/annoucments1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.492" />
 
 
             <!-- Teslim Aldım Butonu -->

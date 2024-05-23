@@ -33,6 +33,8 @@ class donor_form : AppCompatActivity() {
         submitButton.setOnClickListener {
             if (donationData != null) {
                 submitDonation(donationData)
+                val intent = Intent(this, donor_dashboard::class.java)
+                startActivity(intent)
 
             } else {
                 Toast.makeText(this, "No donation data to submit", Toast.LENGTH_SHORT).show()

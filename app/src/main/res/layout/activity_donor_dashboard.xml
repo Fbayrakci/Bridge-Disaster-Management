@@ -34,19 +34,7 @@
 
                 app:popupTheme="@style/Widget.AppCompat.ActionBar.Solid">
 
-                <ImageView
-                    android:id="@+id/notification_icon"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="20dp"
-                    android:paddingEnd="16dp"
-                    android:src="@drawable/ic_video"
-                    app:layout_constraintEnd_toStartOf="@+id/donateSection"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/white" />
+
                 <!-- Boşluk -->
                 <Space
                     android:layout_width="0dp"

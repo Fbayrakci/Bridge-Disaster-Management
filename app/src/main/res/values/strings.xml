@@ -34,5 +34,12 @@
         <item>30</item>
     </string-array>
 
+    <string-array name="category_annoucment">
+        <item>Recent News</item>
+        <item>Shelter</item>
+        <item>Supply Points</item>
+        <item>Health Center</item>
+    </string-array>
+
 
 </resources>

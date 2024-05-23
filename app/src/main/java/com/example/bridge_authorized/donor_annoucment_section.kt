@@ -3,6 +3,7 @@ package com.example.bridge_authorized
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -42,6 +43,7 @@ class donor_annoucment_section : AppCompatActivity() {
 
         recyclerView.adapter = adapter
 
+
         val back = findViewById<ImageView>(R.id.back)
 
         back.setOnClickListener {
@@ -56,9 +58,9 @@ class donor_annoucment_section : AppCompatActivity() {
         startActivity(intent)
     }
     private fun addDataToCategory() {
-        mListan.add(DonorAnnoucmentTypeData("Recent News", R.drawable.annoucments1, donor_annoncment_recentnews::class.java))
-        mListan.add(DonorAnnoucmentTypeData("Shelter", R.drawable.annoucments1, each_item_clothes::class.java))
-        mListan.add(DonorAnnoucmentTypeData("Supply Points", R.drawable.annoucments1, each_item_hygene::class.java))
-        mListan.add(DonorAnnoucmentTypeData("Health Center", R.drawable.annoucments1, each_item_hygene::class.java))
+        mListan.add(DonorAnnoucmentTypeData("Recent News", R.drawable.recentnews, donor_annoncment_recentnews::class.java))
+        mListan.add(DonorAnnoucmentTypeData("Shelter", R.drawable.shellter, donor_annoucment_shelter::class.java))
+        mListan.add(DonorAnnoucmentTypeData("Supply Points", R.drawable.supplypoints, donor_annoucment_supplypoint::class.java))
+        mListan.add(DonorAnnoucmentTypeData("Health Center", R.drawable.healthcenter, donor_annoucment_healthcenter::class.java))
     }
 }

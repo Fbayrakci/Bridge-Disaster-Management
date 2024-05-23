@@ -58,7 +58,7 @@ class donate_section : AppCompatActivity() {
             when (it.itemId) {
                 R.id.nav1 -> navigateToActivity(donor_dashboard::class.java)
                 R.id.nav2 -> navigateToActivity(donate_section::class.java)
-                R.id.nav3 -> navigateToActivity(donor_dashboard::class.java)
+                R.id.nav3 -> navigateToActivity(donor_iban::class.java)
                 R.id.nav4 -> navigateToActivity(donor_profile::class.java)
             }
             true
@@ -69,8 +69,8 @@ class donate_section : AppCompatActivity() {
         startActivity(intent)
     }
     private fun addDataToCategory() {
-        mList.add(DonationTypeData("Food", R.drawable.annoucments1, each_item_food::class.java))
-        mList.add(DonationTypeData("Clothes", R.drawable.annoucments1, each_item_clothes::class.java))
-        mList.add(DonationTypeData("Hygiene", R.drawable.annoucments1, each_item_hygene::class.java))
+        mList.add(DonationTypeData("Food", R.drawable.sectionfood, each_item_food::class.java))
+        mList.add(DonationTypeData("Clothes", R.drawable.sectioncloth, each_item_clothes::class.java))
+        mList.add(DonationTypeData("Hygiene", R.drawable.sectionhygene, each_item_hygene::class.java))
     }
 }

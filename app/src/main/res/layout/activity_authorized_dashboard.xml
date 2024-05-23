@@ -48,14 +48,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="30dp" />
 
-                <!-- Bildirim İkonu -->
-                <ImageView
-                    android:id="@+id/notification_icon"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="end"
-                    android:paddingEnd="16dp"
-                    android:src="@drawable/ic_video" />
+
             </androidx.appcompat.widget.Toolbar>
 
             <androidx.constraintlayout.widget.ConstraintLayout

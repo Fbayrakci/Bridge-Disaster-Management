@@ -7,7 +7,10 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
@@ -53,6 +56,22 @@ class aut_add_annoucments : AppCompatActivity() {
         // Set up listeners and handlers for UI elements
         binding.addAnnouncementButton.setOnClickListener { uploadAnnouncement() }
 
+        val categories = resources.getStringArray(R.array.category_annoucment)
+// İlk adapter'ı ayarla
+        val adapter = ArrayAdapter(this, R.layout.list_item, categories)
+        binding.autoCompleteCategory.setAdapter(adapter)
+
+// Kullanıcı kategori seçtiğinde
+        binding.autoCompleteCategory.setOnItemClickListener { parent, view, position, id ->
+            // Seçilen kategori değerini al
+            val selectedCategory = parent.getItemAtPosition(position).toString()
+            Log.d("AutoComplete", "Selected category: $selectedCategory")
+
+            // Seçilen kategoriyi AutoCompleteTextView'a yazdır
+            binding.autoCompleteCategory.setText(selectedCategory, false)
+            binding.autoCompleteCategory.dismissDropDown()
+            // Klavyeyi kapatmak için, focus'u kaldır
+        }
 
 
 
@@ -79,7 +98,9 @@ class aut_add_annoucments : AppCompatActivity() {
                                 val postMap = hashMapOf<String, Any>()
                                 postMap["downloadUrl"] = downloadUrl
                                 postMap["autEmail"] = autEmail
-                                postMap["comment"] = binding.announcementText.text.toString()
+                                postMap["header"] = binding.announcementText.text.toString()
+                                postMap["category"] = binding.autoCompleteCategory.text.toString()
+                                postMap["description"] = binding.announcementdescriptionText.text.toString()
                                 postMap["date"] = Timestamp.now()
 
                                 firestore.collection("annoucments").add(postMap).addOnSuccessListener {
