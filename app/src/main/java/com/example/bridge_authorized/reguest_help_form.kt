@@ -106,8 +106,6 @@ class reguest_help_form : AppCompatActivity() {
                         binding.autformemail.setText(document.getString("autemail"))
                         binding.autregion.setText(document.getString("autregion"))
                         binding.autaidcenter.setText(document.getString("autcocenter"))
-
-                        // Diğer alanları burada doldurabilirsiniz
                     } else {
                         Toast.makeText(this, "User data not found", Toast.LENGTH_SHORT).show()
                     }
