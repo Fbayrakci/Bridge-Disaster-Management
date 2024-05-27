@@ -51,7 +51,6 @@ class donate_section : AppCompatActivity() {
 
         navView = findViewById(R.id.nav_view)
 
-        // Bu satırı ekleyin
         navView.selectedItemId = R.id.nav2
 
         navView.setOnItemSelectedListener {
