@@ -19,12 +19,10 @@ class depo_activity : AppCompatActivity() {
                 val userCenter = userDetails["autcocenter"] as? String ?: ""
                 fetchDepo(userCenter)
             } else {
-                // Kullanıcı bilgisi alınamadığında yapılacak işlemleri burada gerçekleştirebilirsiniz.
             }
         }
         // Firebase Firestore bağlantısı
         db = FirebaseFirestore.getInstance()
-        // Veri çekme ve UI güncelleme
     }
 
     private fun fetchLoggedInUserDetails(callback: (userDetails: Map<String, Any>?) -> Unit) {
@@ -40,7 +38,6 @@ class depo_activity : AppCompatActivity() {
                     callback(userDetails)
                 }
                 .addOnFailureListener { exception ->
-                    // Hata durumunda işlemleri burada gerçekleştirebilirsiniz.
                     callback(null)
                 }
         } else {
